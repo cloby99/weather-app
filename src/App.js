@@ -38,11 +38,11 @@ function App(){
 
 
   const formatBackground = () => {
-      if (!weather) return "from-cyan-600 to-blue-700";
-      const threshold = units === "metric" ? 20 : 60;
+      if (!weather) return "from-cyan-500 to-blue-600";
+      const threshold = units === "metric" ? 25 : 60;
       if (weather.temp <= threshold) return "from-cyan-600 to-blue-700";
 
-      return "from-yellow-600 to-orange-600"
+      return "from-yellow-600 to-orange-400"
 
   };
 
@@ -52,10 +52,10 @@ function App(){
 
 
   return(
-    <div className='bg-cyan'>
+    <div className='bg-black'>
       
 
-      <div className={`container mx-auto max-w-screen-md pb-5 pt-2 px-32 bg-gradient-to-br h-fit shadow-xl shadow-gray-400  ${formatBackground()}`}>
+      <div className={`container mx-auto max-w-screen-md my-0 pb-5 pt-2 px-32 bg-gradient-to-br max-h-fit shadow-xl shadow-gray-400  ${formatBackground()}`}>
             <TopButtons setQuery={setQuery}/>
             <Inputs setQuery={setQuery} units={units} setUnits={setUnits}/>
 
