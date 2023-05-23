@@ -1,0 +1,90 @@
+@import "compass/css3";
+
+/* What do you have to be scared of?
+ *
+ * Lorin Tackett, July 2013
+ * http://lorintackett.com 
+ */
+
+// Import google font
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+// Cloud vars
+$clouds: 
+  ("https://s.cdpn.io/15514/clouds_2.png" 1000px 20s),
+  ("https://s.cdpn.io/15514/clouds_1.png" 1000px 15s),
+  ("https://s.cdpn.io/15514/clouds_3.png" 1579px 17s);
+
+// Animation & keyframes
+// Refactor by @HugoGiraudel
+// https://codepen.io/HugoGiraudel
+@for $i from 1 through length($clouds) {
+  
+  $item     : nth($clouds, $i);
+  $path     : nth($item, 1);
+  $width    : nth($item, 2);
+  $duration : nth($item, 3);
+  
+  @keyframes clouds-loop-#{$i} {
+    to { background-position: -$width 0; }
+  }
+  
+  .clouds-#{$i} {
+    background-image: url($path);
+    animation: clouds-loop-#{$i} $duration infinite linear;
+  }
+}
+
+// =====================================================
+
+html, body {
+  font-family: 'Oswald', sans-serif;
+  height:  100%;
+  padding: 0;
+  margin:  0;
+}
+
+body {
+  @include background(linear-gradient(#333, #000));
+  text-align:     center;
+  vertical-align: middle;
+  
+  a {
+    $color: #b8956b;
+    @include inline-block;
+    position:        relative;
+    text-align:      right;
+    text-decoration: none;
+    font-weight:     normal;
+    font-size:       1.5em;
+    line-height:     1.5em;
+    margin:          0;
+    color:           $color;
+    text-shadow:     0 -1px 0 rgba(lighten($color, 40%), 0.6),
+                     0 2px 3px #000;
+    
+    span { display: block; }
+  }
+}
+  
+.clouds {
+  @include opacity(0.4);
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  top:      0;
+  left:     0;
+  right:    0;
+  height:   100%;
+}  
+
+.clouds-1,
+.clouds-2,
+.clouds-3 {
+  background-repeat: repeat-x;
+  position: absolute;
+  top:      0;
+  right:    0;
+  left:     0;
+  height:   500px;
+}
