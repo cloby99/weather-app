@@ -57,8 +57,7 @@ function App(){
       <Index/>
 
       
-      <div className={`z-[100] container mx-auto max-w-screen-md  pb-5 pt-2 px-32 bg-gradient-to-br  shadow-xl shadow-gray-400  ${formatBackground()}`}>
-            
+      <div className={`container mx-auto max-w-screen-md my-0 pb-5 pt-2 px-32 bg-gradient-to-br max-h-fit shadow-xl shadow-gray-400  ${formatBackground()}`}>            
             <TopButtons setQuery={setQuery}/>
             <Inputs setQuery={setQuery} units={units} setUnits={setUnits}/>
 
@@ -78,7 +77,7 @@ function App(){
 
           <ToastContainer autoClose={5000} theme='colored' newestOnTop={true} />
           
-          </div>
+      </div>
     </div>
 
   )
