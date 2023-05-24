@@ -11,7 +11,7 @@
 }
 .clouds-1 {
   background-image: url("https://s.cdpn.io/15514/clouds_2.png");
-  animation: clouds-loop-1 20s infinite linear;
+  animation: clouds-loop-1 40s infinite linear;
 }
 
 @keyframes clouds-loop-2 {
@@ -21,7 +21,7 @@
 }
 .clouds-2 {
   background-image: url("https://s.cdpn.io/15514/clouds_1.png");
-  animation: clouds-loop-2 15s infinite linear;
+  animation: clouds-loop-2 35s infinite linear;
 }
 
 @keyframes clouds-loop-3 {
@@ -31,7 +31,7 @@
 }
 .clouds-3 {
   background-image: url("https://s.cdpn.io/15514/clouds_3.png");
-  animation: clouds-loop-3 17s infinite linear;
+  animation: clouds-loop-3 40s infinite linear;
 }
 
 html, body {
@@ -72,7 +72,7 @@ body a span {
 
 .clouds {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-  opacity: 0.4;
+  opacity: 0.13;
   pointer-events: none;
   position: absolute;
   overflow: hidden;

@@ -1,4 +1,3 @@
-import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import UilReact from '@iconscout/react-unicons/icons/uil-react';
@@ -9,6 +8,8 @@ import TemperatureAndDetails from './components/TemperatureAndDetails';
 import Forecast from './components/Forecast';
 import getFormattedWeatherData from "./services/weatherService"
 import { useEffect, useState } from 'react';
+import Index from './dist/index'
+
 
 
 
@@ -52,10 +53,12 @@ function App(){
 
 
   return(
-    <div className='bg-black'>
-      
+    <div className='bg-black z-10'>
+      <Index/>
 
-      <div className={`container mx-auto max-w-screen-md my-0 pb-5 pt-2 px-32 bg-gradient-to-br max-h-fit shadow-xl shadow-gray-400  ${formatBackground()}`}>
+      
+      <div className={`z-[100] container mx-auto max-w-screen-md  pb-5 pt-2 px-32 bg-gradient-to-br  shadow-xl shadow-gray-400  ${formatBackground()}`}>
+            
             <TopButtons setQuery={setQuery}/>
             <Inputs setQuery={setQuery} units={units} setUnits={setUnits}/>
 
@@ -68,12 +71,13 @@ function App(){
 
                 <Forecast title={'hourly forecast'} items={weather.hourly} />
                 <Forecast title={'daily forecast'} items={weather.daily} />
+                
 
               </div>
             )}
 
           <ToastContainer autoClose={5000} theme='colored' newestOnTop={true} />
-
+          
           </div>
     </div>
 
